@@ -305,18 +305,25 @@ function showResult() {
 function calculateWinner() {
     let bestMatches = [];
     let highestScore = -1;
+
+    // First question in each path is the primary filter and gets heavier weight
+    const primaryKeys = {
+        food: 'hunger',
+        beer: 'alcohol',
+        wine: 'color'
+    };
+    const primaryKey = primaryKeys[currentPath];
     
-    // Filter out items that do not match the current category path (food, beer, wine)
     const categoryItems = menuItems.filter(item => item.type === currentPath);
 
     categoryItems.forEach(item => {
         let score = 0;
         
         for (const [key, val] of Object.entries(userPreferences)) {
-            // Note: 'category' is not on the item directly, it's 'type'
             if (key === 'category') continue; 
             if (item[key] === val) {
-                score += 5;
+                // Primary question match is worth more
+                score += (key === primaryKey) ? 10 : 5;
             }
         }
         

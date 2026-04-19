@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gouwe-cache-v4';
+const CACHE_NAME = 'gouwe-cache-v5';
 const urlsToCache = [
   './',
   './index.html',
