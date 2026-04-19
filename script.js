@@ -227,6 +227,12 @@ function renderQuestion() {
     setTimeout(() => {
         questionText.textContent = q.text;
         currentQNum.textContent = (currentPath === 'start' ? 1 : currentQuestionIndex + 2);
+
+        // Update progress bar
+        const totalSteps = (currentPath === 'start') ? 3 : questions[currentPath].length + 1;
+        const currentStep = (currentPath === 'start') ? 1 : currentQuestionIndex + 2;
+        const progressFill = document.getElementById('progress-fill');
+        progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
         
         optionsContainer.innerHTML = '';
         q.options.forEach(opt => {

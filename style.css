@@ -207,6 +207,22 @@ body {
     letter-spacing: 2px;
 }
 
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--card-bg);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+}
+
 .question-wrapper {
     flex: 1;
     display: flex;

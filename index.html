@@ -19,10 +19,18 @@
         })
     </script>
 
+    <!-- SEO & Social Sharing -->
+    <meta name="description" content="Keuzestress bij Café de Gouwe? Laat de Keuzewijzer je helpen! Ontdek jouw perfecte gerecht, biertje of wijntje in Alphen aan den Rijn.">
+    <meta property="og:title" content="Café de Gouwe - Keuzewijzer">
+    <meta property="og:description" content="Keuzestress? Ontdek jouw perfecte keuze bij Café de Gouwe in Alphen aan den Rijn!">
+    <meta property="og:image" content="icon-512.png">
+    <meta property="og:type" content="website">
+
     <!-- PWA Settings -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1a1c1a">
-    <!-- Note: add icons if needed -->
+    <meta name="theme-color" content="#1c1a17">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" type="image/png" href="icon-192.png">
 </head>
 <body>
     <!-- Background Decor -->
@@ -51,7 +59,9 @@
                 <div class="progress-info">
                     <span>Vraag <span id="current-q-num">1</span></span>
                 </div>
-                <!-- Adding a minimalist progress bar -->
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
             </div>
 
             <div class="question-wrapper">
@@ -75,7 +85,7 @@
             <div class="winner-card glass-panel">
                 <span id="winner-price" class="drink-price"></span>
                 <div class="winner-image-container">
-                    <img id="winner-image" src="" alt="Menu Item" />
+                    <img id="winner-image" src="" alt="Menu Item" onerror="this.style.display='none'" />
                 </div>
                 
                 <div class="winner-main">
