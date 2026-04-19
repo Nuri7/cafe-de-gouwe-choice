@@ -291,6 +291,14 @@ body {
     flex-shrink: 0;
 }
 
+.winner-card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0 !important;
+    height: max-content;
+    min-height: max-content;
+}
+
 .drink-price {
     position: absolute;
     top: 20px;
