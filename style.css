@@ -21,7 +21,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow: hidden; /* Prevent scrolling on app container */
+    overflow-x: hidden; /* Only prevent horizontal scroll; allow vertical for result screen */
     height: 100vh;
     width: 100vw;
     display: flex;

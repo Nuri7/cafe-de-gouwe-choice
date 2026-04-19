@@ -1,39 +1,74 @@
 // --- Data Database ---
 const menuItems = [
-    // --- Food / Snacks ---
-    { id: 'carpaccio', name: 'Gouwe Carpaccio', type: 'food', mood: 'Fancy', hunger: 'Voorgerecht', temp: 'Koud', price: '€11', image: 'menus/images/food/voorgerechten/carpaccio.png' },
-    { id: 'soep', name: 'Soep van het Moment', type: 'food', mood: 'Gezellig', hunger: 'Voorgerecht', temp: 'Warm', price: '€6,50', image: 'menus/images/food/voorgerechten/soep_van_het_moment.png' },
-    { id: 'broodplankje', name: 'Broodplankje', type: 'food', mood: 'Delen', hunger: 'Voorgerecht', temp: 'Warm', price: '€6,50', image: 'menus/images/food/voorgerechten/broodplankje.png' },
-    
-    { id: 'hamburger', name: 'Gouwe Hamburger', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', temp: 'Warm', price: '€17,50', image: 'menus/images/food/hoofdgerechten/hamburger.png' },
-    { id: 'vegaburger', name: 'Vegetarische Burger', type: 'food', mood: 'Bewust', hunger: 'Grote trek', temp: 'Warm', price: '€17,50', image: 'menus/images/food/hoofdgerechten/vegaburger.png' },
-    { id: 'schnitzel', name: 'XXL Schnitzel', type: 'food', mood: 'Gezellig', hunger: 'Extreem', temp: 'Warm', price: '€19,50', image: 'menus/images/food/hoofdgerechten/xxl_schnitzel.png' },
-    { id: 'spareribs', name: 'Spareribs', type: 'food', mood: 'Gezellig', hunger: 'Extreem', temp: 'Warm', price: '€19,50', image: 'menus/images/food/hoofdgerechten/spareribs.png' },
-    { id: 'saté', name: 'Saté van Kip', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', temp: 'Warm', price: '€16,50', image: 'menus/images/food/hoofdgerechten/sate_van_kip.png' },
-    { id: 'biefstuk', name: 'Ierse Biefstuk', type: 'food', mood: 'Fancy', hunger: 'Grote trek', temp: 'Warm', price: '€20', image: 'menus/images/food/hoofdgerechten/ierse_biefstuk.png' },
+    // --- Food: Voorgerechten ---
+    { id: 'carpaccio', name: 'Gouwe Carpaccio', type: 'food', mood: 'Fancy', hunger: 'Voorgerecht', price: '€11', image: 'menus/images/food/voorgerechten/carpaccio.png' },
+    { id: 'soep', name: 'Soep van het Moment', type: 'food', mood: 'Gezellig', hunger: 'Voorgerecht', price: '€6,50', image: 'menus/images/food/voorgerechten/soep_van_het_moment.png' },
+    { id: 'broodplankje', name: 'Broodplankje', type: 'food', mood: 'Delen', hunger: 'Voorgerecht', price: '€6,50', image: 'menus/images/food/voorgerechten/broodplankje.png' },
 
-    { id: 'kaasplank', name: 'Kaasplankje', type: 'food', mood: 'Delen', hunger: 'Borrel', temp: 'Koud', price: '€11,50', image: 'menus/images/food/koude_snacks/kaasplankje.png' },
-    { id: 'bittergarnituur', name: 'Gemengd Bittergarnituur', type: 'food', mood: 'Delen', hunger: 'Borrel', temp: 'Warm', price: 'V.a. €8', image: 'menus/images/food/warme_snacks/bittergarnituur.png' },
-    { id: 'sushi', name: 'Verse Sushi', type: 'food', mood: 'Fancy', hunger: 'Borrel', temp: 'Koud', price: 'Wisselend', image: 'menus/images/food/sushi/verse_sushi.png' },
-    
-    // --- Beers ---
-    { id: 'duvel', name: 'Duvel', type: 'beer', vibe: 'Krachtig', taste: 'Blond', temp: 'Koud', alcohol: 'Zwaar (8+ %)', price: '€5,00', image: 'menus/images/beers/Krachtig_en_Blond/duvel.png' },
-    { id: 'heineken', name: 'Heineken Pilsner', type: 'beer', vibe: 'Fris', taste: 'Pils', temp: 'Koud', alcohol: 'Normaal (~5%)', price: '€3,20', image: 'menus/images/beers/Krachtig_en_Blond/heineken.png' },
-    { id: 'weizen', name: 'Brand Weizen', type: 'beer', vibe: 'Fruitig', taste: 'Weizen', temp: 'Koud', alcohol: 'Normaal (~5%)', price: '€4,50', image: 'menus/images/beers/fruitig_en_fris/brand_weizen.png' },
-    { id: 'wit', name: 'Affligem Belgisch Wit', type: 'beer', vibe: 'Fruitig', taste: 'Wit', temp: 'Koud', alcohol: 'Licht (<5%)', price: '€4,50', image: 'menus/images/beers/fruitig_en_fris/affligem_wit.png' },
-    { id: 'tripel', name: 'Westmalle Tripel', type: 'beer', vibe: 'Krachtig', taste: 'Tripel', temp: 'Koud', alcohol: 'Zwaar (8+ %)', price: '€5,50', image: 'menus/images/beers/Krachtig_en_Blond/westmalle_tripel.png' },
-    { id: 'radler', name: 'Amstel Radler', type: 'beer', vibe: 'Fris', taste: 'Zoet', temp: 'Koud', alcohol: 'Licht (<5%)', price: '€3,50', image: 'menus/images/beers/fruitig_en_fris/amstel_radler.png' },
-    { id: 'radler00', name: 'Amstel Radler 0.0%', type: 'beer', vibe: 'Fris', taste: 'Zoet', temp: 'Koud', alcohol: 'Alcoholvrij', price: '€3,50', image: 'menus/images/beers/alcoholvrij/amstel_radler_00.png' },
-    { id: 'heineken00', name: 'Heineken 0.0', type: 'beer', vibe: 'Fris', taste: 'Pils', temp: 'Koud', alcohol: 'Alcoholvrij', price: '€3,20', image: 'menus/images/beers/alcoholvrij/heineken_00.png' },
-    
-    // --- Wines ---
-    { id: 'sauvignon', name: 'Osadia Sauvignon Blanc', type: 'wine', color: 'Wit', taste: 'Droog & Fris', occassion: 'Gezellig', price: 'Glas €5', image: 'menus/images/wines/wit/osadia_sauvignon_blanc.png' },
-    { id: 'chardonnay', name: 'Luis Felipe Chardonnay', type: 'wine', color: 'Wit', taste: 'Vol & Rond', occassion: 'Diner', price: 'Glas €5', image: 'menus/images/wines/wit/luis_felipe_chardonnay.png' },
-    { id: 'zoet', name: 'Kloster Krone Zoet', type: 'wine', color: 'Wit', taste: 'Zoet', occassion: 'Gezellig', price: 'Glas €5', image: 'menus/images/wines/wit/kloster_krone_zoete.png' },
-    { id: 'rose', name: 'Abadia Real Rosé', type: 'wine', color: 'Rosé', taste: 'Droog & Fris', occassion: 'Terras', price: 'Glas €5', image: 'menus/images/wines/rose/abadia_real.png' },
-    { id: 'merlot', name: 'Luis Felipe Merlot', type: 'wine', color: 'Rood', taste: 'Zacht & Soepel', occassion: 'Gezellig', price: 'Glas €5', image: 'menus/images/wines/rood/luis_felipe_merlot.png' },
-    { id: 'malbec', name: 'Navarro Correas Malbec', type: 'wine', color: 'Rood', taste: 'Stevig', occassion: 'Diner', price: 'Glas €7,50', image: 'menus/images/wines/rood/navarro_malbec.png' },
-    { id: 'prosecco', name: 'Lisetto Prosecco', type: 'wine', color: 'Mousserend', taste: 'Feestelijk', occassion: 'Vieren', price: 'Piccolo €7,50', image: 'menus/images/wines/Mousserend/lisetto_prosecco.png' }
+    // --- Food: Hoofdgerechten ---
+    { id: 'hamburger', name: 'Gouwe Hamburger', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', price: '€17,50', image: 'menus/images/food/hoofdgerechten/hamburger.png' },
+    { id: 'vegaburger', name: 'Vegetarische Burger', type: 'food', mood: 'Bewust', hunger: 'Grote trek', price: '€17,50', image: 'menus/images/food/hoofdgerechten/vegaburger.png' },
+    { id: 'cordonbleu', name: 'Cordon Bleu (kip)', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', price: '€17,50', image: 'menus/images/food/hoofdgerechten/cordon_bleu.png' },
+    { id: 'halvekip', name: 'Halve Kip', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', price: '€14,50', image: 'menus/images/food/hoofdgerechten/halve_kip.png' },
+    { id: 'saté', name: 'Saté van Kip', type: 'food', mood: 'Gezellig', hunger: 'Grote trek', price: '€16,50', image: 'menus/images/food/hoofdgerechten/sate_van_kip.png' },
+    { id: 'biefstuk', name: 'Ierse Biefstuk', type: 'food', mood: 'Fancy', hunger: 'Grote trek', price: '€20', image: 'menus/images/food/hoofdgerechten/ierse_biefstuk.png' },
+    { id: 'schnitzel', name: 'XXL Schnitzel', type: 'food', mood: 'Gezellig', hunger: 'Extreem', price: '€19,50', image: 'menus/images/food/hoofdgerechten/xxl_schnitzel.png' },
+    { id: 'spareribs', name: 'Spareribs', type: 'food', mood: 'Gezellig', hunger: 'Extreem', price: '€19,50', image: 'menus/images/food/hoofdgerechten/spareribs.png' },
+    { id: 'kindermenu', name: 'Kindermenu', type: 'food', mood: 'Gezellig', hunger: 'Voorgerecht', price: '€7,50', image: 'menus/images/food/hoofdgerechten/kindermenu.png' },
+
+    // --- Food: Nagerechten ---
+    { id: 'dameblanche', name: 'Dame Blanche', type: 'food', mood: 'Fancy', hunger: 'Nagerecht', price: '€7,50', image: 'menus/images/food/nagerechten/dame_blanche.png' },
+    { id: 'lavacake', name: 'Chocolade Lavacake', type: 'food', mood: 'Fancy', hunger: 'Nagerecht', price: '€7,50', image: 'menus/images/food/nagerechten/lavacake.png' },
+
+    // --- Food: Borrel & Snacks ---
+    { id: 'kaasplank', name: 'Kaasplankje', type: 'food', mood: 'Delen', hunger: 'Borrel', price: '€11,50', image: 'menus/images/food/koude_snacks/kaasplankje.png' },
+    { id: 'worstplankje', name: 'Worstplankje', type: 'food', mood: 'Delen', hunger: 'Borrel', price: '€11,50', image: 'menus/images/food/koude_snacks/worstplankje.png' },
+    { id: 'kaasworst', name: 'Kaas- en Worstplankje', type: 'food', mood: 'Delen', hunger: 'Borrel', price: '€15', image: 'menus/images/food/koude_snacks/kaas_en_worstplankje.png' },
+    { id: 'nootjes', name: 'Nootjes', type: 'food', mood: 'Gezellig', hunger: 'Borrel', price: '€3,50', image: 'menus/images/food/koude_snacks/nootjes.png' },
+    { id: 'bittergarnituur', name: 'Gemengd Bittergarnituur', type: 'food', mood: 'Delen', hunger: 'Borrel', price: 'V.a. €8', image: 'menus/images/food/warme_snacks/bittergarnituur.png' },
+    { id: 'sushi', name: 'Verse Sushi', type: 'food', mood: 'Fancy', hunger: 'Borrel', price: 'Wisselend', image: 'menus/images/food/sushi/verse_sushi.png' },
+
+    // --- Beers: Krachtig & Blond ---
+    { id: 'duvel', name: 'Duvel', type: 'beer', vibe: 'Krachtig', alcohol: 'Zwaar (8+ %)', price: '€5,00', image: 'menus/images/beers/Krachtig_en_Blond/duvel.png' },
+    { id: 'tripel', name: 'Westmalle Tripel', type: 'beer', vibe: 'Krachtig', alcohol: 'Zwaar (8+ %)', price: '€5,50', image: 'menus/images/beers/Krachtig_en_Blond/westmalle_tripel.png' },
+    { id: 'affligemdubbel', name: 'Affligem Dubbel', type: 'beer', vibe: 'Krachtig', alcohol: 'Zwaar (8+ %)', price: '€5,00', image: 'menus/images/beers/Krachtig_en_Blond/affligem_dubbel.png' },
+    { id: 'lagoudale', name: 'La Goudale', type: 'beer', vibe: 'Krachtig', alcohol: 'Zwaar (8+ %)', price: '€5,50', image: 'menus/images/beers/Krachtig_en_Blond/la_goudale.png' },
+    { id: 'affligemblond', name: 'Affligem Blond', type: 'beer', vibe: 'Fris', alcohol: 'Normaal (~5%)', price: '€4,50', image: 'menus/images/beers/Krachtig_en_Blond/affligem_blond.png' },
+    { id: 'brugsezot', name: 'Brugse Zot Blond', type: 'beer', vibe: 'Fruitig', alcohol: 'Normaal (~5%)', price: '€5,00', image: 'menus/images/beers/Krachtig_en_Blond/brugse_zot.png' },
+    { id: 'oedipus', name: 'Oedipus', type: 'beer', vibe: 'Fruitig', alcohol: 'Normaal (~5%)', price: '€5,00', image: 'menus/images/beers/Krachtig_en_Blond/oedipus.png' },
+    { id: 'heineken', name: 'Heineken Pilsner', type: 'beer', vibe: 'Fris', alcohol: 'Normaal (~5%)', price: '€3,20', image: 'menus/images/beers/Krachtig_en_Blond/heineken.png' },
+
+    // --- Beers: Fruitig & Fris ---
+    { id: 'weizen', name: 'Brand Weizen', type: 'beer', vibe: 'Fruitig', alcohol: 'Normaal (~5%)', price: '€4,50', image: 'menus/images/beers/fruitig_en_fris/brand_weizen.png' },
+    { id: 'wit', name: 'Affligem Belgisch Wit', type: 'beer', vibe: 'Fruitig', alcohol: 'Licht (<5%)', price: '€4,50', image: 'menus/images/beers/fruitig_en_fris/affligem_wit.png' },
+    { id: 'texels', name: 'Texels Skumkoppe', type: 'beer', vibe: 'Fruitig', alcohol: 'Normaal (~5%)', price: '€5,00', image: 'menus/images/beers/fruitig_en_fris/texels_skumkoppe.png' },
+    { id: 'corona', name: 'Corona', type: 'beer', vibe: 'Fris', alcohol: 'Licht (<5%)', price: '€4,00', image: 'menus/images/beers/fruitig_en_fris/corona.png' },
+    { id: 'radler', name: 'Amstel Radler', type: 'beer', vibe: 'Fris', alcohol: 'Licht (<5%)', price: '€3,50', image: 'menus/images/beers/fruitig_en_fris/amstel_radler.png' },
+
+    // --- Beers: Alcoholvrij ---
+    { id: 'heineken00', name: 'Heineken 0.0', type: 'beer', vibe: 'Fris', alcohol: 'Alcoholvrij', price: '€3,20', image: 'menus/images/beers/alcoholvrij/heineken_00.png' },
+    { id: 'radler00', name: 'Amstel Radler 0.0%', type: 'beer', vibe: 'Fris', alcohol: 'Alcoholvrij', price: '€3,50', image: 'menus/images/beers/alcoholvrij/amstel_radler_00.png' },
+    { id: 'affligem00', name: 'Affligem Blond 0.0%', type: 'beer', vibe: 'Fris', alcohol: 'Alcoholvrij', price: '€3,50', image: 'menus/images/beers/alcoholvrij/affligem_blond_00.png' },
+    { id: 'texels00', name: 'Texels Skumkoppe 0.0%', type: 'beer', vibe: 'Fruitig', alcohol: 'Alcoholvrij', price: '€4,00', image: 'menus/images/beers/alcoholvrij/texels_skumkoppe_00.png' },
+    { id: 'desperados', name: 'Desperados Virgin', type: 'beer', vibe: 'Fris', alcohol: 'Alcoholvrij', price: '€3,50', image: 'menus/images/beers/alcoholvrij/desperados_virgin.png' },
+
+    // --- Wines: Wit ---
+    { id: 'sauvignon', name: 'Osadia Sauvignon Blanc', type: 'wine', color: 'Wit', taste: 'Droog & Fris', price: 'Glas €5', image: 'menus/images/wines/wit/osadia_sauvignon_blanc.png' },
+    { id: 'verdejo', name: 'La Lustrosa Verdejo', type: 'wine', color: 'Wit', taste: 'Droog & Fris', price: 'Glas €5', image: 'menus/images/wines/wit/la_lustrosa_verdejo.png' },
+    { id: 'pinotgrigio', name: "Ca' Del Doge Pinot Grigio", type: 'wine', color: 'Wit', taste: 'Droog & Fris', price: 'Glas €5', image: 'menus/images/wines/wit/cadel_doge_pinot_grigio.png' },
+    { id: 'chardonnay', name: 'Luis Felipe Chardonnay', type: 'wine', color: 'Wit', taste: 'Vol & Rond', price: 'Glas €5', image: 'menus/images/wines/wit/luis_felipe_chardonnay.png' },
+    { id: 'zoet', name: 'Kloster Krone Zoet', type: 'wine', color: 'Wit', taste: 'Zoet', price: 'Glas €5', image: 'menus/images/wines/wit/kloster_krone_zoete.png' },
+
+    // --- Wines: Rosé ---
+    { id: 'rose', name: 'Abadia Real Rosé', type: 'wine', color: 'Rosé', taste: 'Droog & Fris', price: 'Glas €5', image: 'menus/images/wines/rose/abadia_real.png' },
+
+    // --- Wines: Rood ---
+    { id: 'merlot', name: 'Luis Felipe Merlot', type: 'wine', color: 'Rood', taste: 'Zacht & Soepel', price: 'Glas €5', image: 'menus/images/wines/rood/luis_felipe_merlot.png' },
+    { id: 'cabernet', name: 'Xanadu Cabernet Sauvignon', type: 'wine', color: 'Rood', taste: 'Stevig', price: 'Glas €6,50', image: 'menus/images/wines/rood/xanadu_cabernet.png' },
+    { id: 'malbec', name: 'Navarro Correas Malbec', type: 'wine', color: 'Rood', taste: 'Stevig', price: 'Glas €7,50', image: 'menus/images/wines/rood/navarro_malbec.png' },
+
+    // --- Wines: Mousserend ---
+    { id: 'prosecco', name: 'Lisetto Prosecco', type: 'wine', color: 'Mousserend', taste: 'Feestelijk', price: 'Piccolo €7,50', image: 'menus/images/wines/Mousserend/lisetto_prosecco.png' }
 ];
 
 // --- Application State ---
@@ -62,7 +97,8 @@ const questions = {
                 { id: 'Voorgerecht', text: 'Een klein begin / Voorgerecht', emoji: '🥗' },
                 { id: 'Grote trek', text: 'Een flinke maaltijd', emoji: '🍽️' },
                 { id: 'Extreem', text: 'Ik gooi alles naar binnen!', emoji: '🍖' },
-                { id: 'Borrel', text: 'Gewoon lekker borrelen', emoji: '🧀' }
+                { id: 'Borrel', text: 'Gewoon lekker borrelen', emoji: '🧀' },
+                { id: 'Nagerecht', text: 'Iets zoets als nagerecht', emoji: '🍰' }
             ]
         },
         {
@@ -115,7 +151,9 @@ const questions = {
                 { id: 'Droog & Fris', text: 'Droog en fris', emoji: '🍋' },
                 { id: 'Vol & Rond', text: 'Vol en rond', emoji: '🍑' },
                 { id: 'Zoet', text: 'Lekker zoet', emoji: '🍯' },
-                { id: 'Stevig', text: 'Stevig rood', emoji: '🍇' }
+                { id: 'Zacht & Soepel', text: 'Zacht en soepel', emoji: '🌹' },
+                { id: 'Stevig', text: 'Stevig rood', emoji: '🍇' },
+                { id: 'Feestelijk', text: 'Feestelijk bubbels!', emoji: '🎉' }
             ]
         }
     ]
