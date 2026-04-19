@@ -1,0 +1,10 @@
+{
+  "name": "De Gouwe Keuzewijzer",
+  "short_name": "Keuzewijzer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1c1a17",
+  "theme_color": "#c38b22",
+  "description": "Interactive choice maker for Cafe de Gouwe",
+  "icons": []
+}

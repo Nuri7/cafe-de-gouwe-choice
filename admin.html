@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café de Gouwe - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1a17;
+            color: #f7eed7;
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .login-box {
+            background: rgba(247, 238, 215, 0.05);
+            border: 1px solid rgba(247, 238, 215, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            text-align: center;
+            letter-spacing: 5px;
+            width: 200px;
+        }
+        .btn {
+            background: #c38b22;
+            color: #1c1a17;
+            border: none;
+            padding: 12px 24px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .dashboard {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            border-radius: 12px;
+            background: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-screen" class="login-box">
+        <h2>Admin Toegang</h2>
+        <p>Voer je pincode in</p>
+        <input type="password" id="pin" maxlength="4"><br>
+        <button class="btn" onclick="checkPin()">Inloggen</button>
+        <p id="error-msg" style="color: #ff6b6b; display: none;">Onjuiste pincode</p>
+    </div>
+
+    <div id="dashboard-screen" class="dashboard">
+        <h2>PostHog Analytics</h2>
+        <p>In the future you can embed the Posthog iframe here.</p>
+        <iframe src="https://eu.posthog.com/embedded/XXXX"></iframe>
+    </div>
+
+    <script>
+        function checkPin() {
+            const pin = document.getElementById('pin').value;
+            if (pin === '3340') {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('dashboard-screen').style.display = 'block';
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+                document.getElementById('pin').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

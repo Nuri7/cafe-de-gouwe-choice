@@ -1,0 +1,355 @@
+/* Café de Gouwe - Cozy & Modern Styling */
+
+:root {
+    --bg-color: #1c1a17;
+    --text-color: #f7eed7;
+    --primary: #c38b22;
+    --primary-hover: #e5b150;
+    --card-bg: rgba(247, 238, 215, 0.05);
+    --glass-border: rgba(247, 238, 215, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden; /* Prevent scrolling on app container */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Atmosphere */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -2;
+    opacity: 0.6;
+}
+
+.bg-shape-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(195,139,34,0.4) 0%, rgba(28,26,23,0) 70%);
+    top: -100px;
+    left: -100px;
+    animation: drift 15s ease-in-out infinite alternate;
+}
+
+.bg-shape-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(160,82,45,0.4) 0%, rgba(28,26,23,0) 70%);
+    bottom: -50px;
+    right: -50px;
+    animation: drift 20s ease-in-out infinite alternate-reverse;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+    opacity: 0.05;
+    z-index: -1;
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+}
+
+/* Container */
+#app-container {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 850px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Screen */
+.home-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 50px;
+}
+
+.klub-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--primary);
+    text-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.btn {
+    border: none;
+    border-radius: 30px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--bg-color);
+    box-shadow: 0 8px 20px rgba(195,139,34,0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(195,139,34,0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--glass-border);
+}
+
+.btn-outline:hover {
+    background: var(--card-bg);
+}
+
+/* Quiz UI */
+.quiz-header {
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.progress-info {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.question-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option-btn:hover {
+    background: rgba(247, 238, 215, 0.1);
+    transform: translateY(-2px);
+}
+
+.option-btn .emoji {
+    font-size: 1.5rem;
+}
+
+/* Result Screen */
+.result-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.result-emoji {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.glass-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.drink-price {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: var(--bg-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    z-index: 10;
+}
+
+.winner-image-container {
+    width: 100%;
+    height: 300px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.winner-image-container img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+    max-width: 100%;
+}
+
+.winner-main {
+    padding: 25px;
+    text-align: center;
+}
+
+.drink-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.why-fits h3 {
+    font-size: 1rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.why-fits p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.cta-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cta-text {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
