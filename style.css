@@ -88,6 +88,7 @@ body {
     width: 100%;
     min-height: 100%;
     padding: 20px;
+    flex-shrink: 0;
 }
 
 .screen.active {
@@ -287,6 +288,7 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 15px 35px var(--shadow-color);
+    flex-shrink: 0;
 }
 
 .drink-price {
