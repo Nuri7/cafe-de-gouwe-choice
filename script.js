@@ -283,7 +283,11 @@ function showResult() {
     
     document.getElementById('winner-name').textContent = winner.name;
     document.getElementById('winner-price').textContent = winner.price;
-    document.getElementById('winner-image').src = winner.image || '';
+    
+    const winnerImg = document.getElementById('winner-image');
+    winnerImg.style.display = 'block';
+    winnerImg.onerror = function() { this.style.display = 'none'; };
+    winnerImg.src = winner.image || '';
     
     let reason = "Dit is precies wat je zocht!";
     if(currentPath === 'food') reason = `Omdat je op zoek bent naar een ${userPreferences.hunger.toLowerCase()}!`;
